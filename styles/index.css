@@ -1,6 +1,14 @@
 /* Super awesome: https://jgthms.com/web-design-in-4-minutes */
 
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --color-primary: #023047;
+    --color-secondary: #219EBC;
+    --color-tertiary: #8ECAE6;
+    --color-4: #FFB703;
+    --color-5: #FB8500;
+  }
 
 html {
     font-size: 16px;
@@ -10,7 +18,7 @@ html {
 body {
     margin: 0 auto;
     padding: 2rem 1rem;
-    max-width: 50em;
+    max-width: 40em;
     color: #444;
     line-height: 1.5;
 }
@@ -22,7 +30,14 @@ h2 {
 
 h1,
 h2 {
-    color: #333;
+    color: var(--color-primary);
+}
+
+a {
+    color: var(--color-secondary);
+}
+a:visited {
+    color: var(--color-primary);
 }
 
 code,
