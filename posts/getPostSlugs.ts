@@ -1,10 +1,10 @@
 import fs from 'fs';
 import { promisify } from 'util';
+import { postsBasePath } from './consts';
 
 const readDir = promisify(fs.readdir);
 
 const mdExtensionRegex = /\.md/;
-const dirPath = `posts/db`;
 
 /**
  * Returns a list of all posts slugs.
@@ -14,7 +14,7 @@ const dirPath = `posts/db`;
  */
 async function getPostSlugs(): Promise<string[]> {
   try {
-    const files = await readDir(dirPath, 'utf8');
+    const files = await readDir(postsBasePath, 'utf8');
     const slugs = files.map((fileName) =>
       fileName.replace(mdExtensionRegex, '')
     );

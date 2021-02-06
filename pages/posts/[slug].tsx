@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { getPost } from '../../posts/getPost';
+import { getPostContent } from '../../posts/getPostContent';
 import { getPostSlugs } from '../../posts/getPostSlugs';
 
 type PostParams = { slug: string };
@@ -14,12 +14,11 @@ export const getStaticProps: GetStaticProps = async ({
 }: {
   params: PostParams;
 }) => {
-  console.log(params);
-  const post = await getPost(params.slug);
+  const postContent = await getPostContent(params.slug);
 
   return {
     props: {
-      postContent: post,
+      postContent,
     },
     revalidate: 5, // seconds
   };
@@ -27,17 +26,21 @@ export const getStaticProps: GetStaticProps = async ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const postSlugs = await getPostSlugs();
-
-  const paths = postSlugs.map((postSlug) => ({
-    params: { slug: postSlug },
-  }));
-
-  console.log('static paths', paths);
+  const paths = formatPaths(postSlugs);
 
   return {
     paths,
     fallback: true,
   };
 };
+
+/**
+ * @private
+ */
+function formatPaths(postSlugs: string[]) {
+  return postSlugs.map((postSlug) => ({
+    params: { slug: postSlug },
+  }));
+}
 
 export default PostPage;
