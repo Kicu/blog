@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start"
   },
@@ -15,7 +15,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "remark": "~13.0.0",
-    "remark-html": "~13.0.1"
+    "remark-extract-frontmatter": "^3.1.0",
+    "remark-frontmatter": "^3.0.0",
+    "remark-html": "~13.0.1",
+    "yaml": "^2.0.0-3"
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
