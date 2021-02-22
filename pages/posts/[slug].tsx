@@ -1,24 +1,42 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { getPostContent } from '../../posts/getPostContent';
+import { getPost } from '../../posts/getPost';
 import { getPostSlugs } from '../../posts/getPostSlugs';
 
-type PostParams = { slug: string };
-
-function PostPage({ postContent }: { postContent: string }) {
-  return <main dangerouslySetInnerHTML={{ __html: postContent }} />;
+function PostPage({
+  postContent,
+  title,
+  date,
+}: {
+  postContent: string;
+  title: string;
+  date: string;
+}) {
+  return (
+    <main>
+      <article>
+        <header>
+          <h1>{title}</h1>
+          <p>{date}</p>
+        </header>
+        <div dangerouslySetInnerHTML={{ __html: postContent }} />
+      </article>
+    </main>
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({
   params,
 }: {
-  params: PostParams;
+  params: PostPageParams;
 }) => {
-  const postContent = await getPostContent(params.slug);
+  const post = await getPost(params.slug);
 
   return {
     props: {
-      postContent,
+      postContent: post.content,
+      title: post.metadata.title,
+      date: post.metadata.createdDate,
     },
     revalidate: 5, // seconds
   };
