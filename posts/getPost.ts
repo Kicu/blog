@@ -6,6 +6,16 @@ import { convertMarkdownToPost } from './convertMarkdownToPost';
 
 const readFile = promisify(fs.readFile);
 
+export type PostMetadata = {
+  title: string;
+  id: number;
+  createdDate: Date;
+};
+export type Post = {
+  content: string;
+  metadata: PostMetadata
+};
+
 /**
  * Returns HTML-string markdown of an article found by slugname
  */
