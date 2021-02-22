@@ -3,12 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
+    --space-m: 1rem;
+    --space-l: 2rem;
+
     --color-primary: #023047;
     --color-secondary: #219EBC;
     --color-tertiary: #8ECAE6;
     --color-4: #FFB703;
     --color-5: #FB8500;
+    --color-dark: #444444;
   }
+
+/* General & theme */
 
 html {
     font-size: 16px;
@@ -19,7 +25,7 @@ body {
     margin: 0 auto;
     padding: 2rem 1rem;
     max-width: 40em;
-    color: #444;
+    color: var(--color-dark);
     line-height: 1.5;
 }
 
@@ -52,4 +58,23 @@ code {
 
 pre {
     padding: 1em;
+}
+
+/* Page specific */
+
+.postsList {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.postsList .postsList__item {
+    margin-bottom: var(--space-l);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    
+}
+
+.postsList .postsList__item a {
+    text-decoration: none;
 }
