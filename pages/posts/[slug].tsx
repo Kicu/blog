@@ -14,10 +14,10 @@ function PostPage({
 }) {
   return (
     <main>
-      <article>
+      <article className="post">
         <header>
           <h1>{title}</h1>
-          <p>{date}</p>
+          <p className="createdDate">{date}</p>
         </header>
         <div dangerouslySetInnerHTML={{ __html: postContent }} />
       </article>

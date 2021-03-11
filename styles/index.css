@@ -12,6 +12,7 @@
     --color-4: #FFB703;
     --color-5: #FB8500;
     --color-dark: #444444;
+    --color-white: #ffffff;
   }
 
 /* General & theme */
@@ -46,20 +47,6 @@ a:visited {
     color: var(--color-primary);
 }
 
-code,
-pre {
-    background: #eee;
-}
-
-code {
-    padding: 2px 4px;
-    vertical-align: text-bottom;
-}
-
-pre {
-    padding: 1em;
-}
-
 /* Page specific */
 
 .postsList {
@@ -77,4 +64,41 @@ pre {
 
 .postsList .postsList__item a {
     text-decoration: none;
+}
+
+.post code,
+.post pre {
+    background: #eee;
+}
+
+.post code {
+    padding: 2px 4px;
+    vertical-align: text-bottom;
+}
+
+.post pre {
+    padding: 1rem;
+}
+
+.post header .createdDate {
+    font-size: 0.875rem;
+}
+
+/* custom quoting styling allowing for nice quote author */
+.post blockquote {
+    margin-left: 0;
+    font-size: 1.2rem;
+}
+
+.post blockquote > p {
+    padding-left: var(--space-m);
+    border-left: 4px solid var(--color-dark);
+}
+
+.post blockquote > p > em:last-child {
+    display: block;
+    /* negative margin trick to cover border to make it vertically shorter */
+    margin-left: calc(-1 * (var(--space-m) + 4px)); 
+    border-left: 4px solid var(--color-white);
+    text-align: end;
 }
