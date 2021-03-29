@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
-import { getPostSlugs } from '../../src/posts/getPostSlugs';
+import { getPostList } from '../../src/posts/getPostList';
 
 function PostsIndexPage({ postSlugs }: { postSlugs: string[] }) {
   return (
@@ -23,7 +23,8 @@ function PostsIndexPage({ postSlugs }: { postSlugs: string[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const postSlugs = await getPostSlugs();
+  const posts = await getPostList();
+  const postSlugs = posts.map(metadata => metadata.slug);
 
   return {
     props: {

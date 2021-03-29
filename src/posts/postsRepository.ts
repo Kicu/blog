@@ -2,17 +2,25 @@ import fs from 'fs';
 import { promisify } from 'util';
 import { postsBasePath } from '../consts';
 
+const readFile = promisify(fs.readFile);
 const readDir = promisify(fs.readdir);
 
 const mdExtensionRegex = /\.md/;
 
-/**
- * Returns a list of all posts slugs.
- * Slug is the same as filename but without the file extension.
- *
- * @return {Promise<string[]>}
- */
-async function getPostSlugs(): Promise<string[]> {
+async function getRawPost(fileName: string) {
+  const filePath = `${postsBasePath}/${fileName}.md`;
+
+  try {
+    const fileData = await readFile(filePath, 'utf8');
+
+    return fileData;
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+}
+
+async function getAllPostNames() {
   try {
     const files = await readDir(postsBasePath, 'utf8');
     const slugs = files.map((fileName) =>
@@ -26,4 +34,4 @@ async function getPostSlugs(): Promise<string[]> {
   }
 }
 
-export { getPostSlugs };
+export { getRawPost, getAllPostNames };

@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { getPost } from '../../src/posts/getPost';
-import { getPostSlugs } from '../../src/posts/getPostSlugs';
+import { getPostList } from '../../src/posts/getPostList';
 
 function PostPage({
   postContent,
@@ -43,8 +43,8 @@ export const getStaticProps: GetStaticProps = async ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const postSlugs = await getPostSlugs();
-  const paths = formatPaths(postSlugs);
+  const posts = await getPostList();
+  const paths = formatPaths(posts);
 
   return {
     paths,
@@ -55,9 +55,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 /**
  * @private
  */
-function formatPaths(postSlugs: string[]) {
-  return postSlugs.map((postSlug) => ({
-    params: { slug: postSlug },
+function formatPaths(postsMetadata: PostMetadata[]) {
+  return postsMetadata.map((metadata) => ({
+    params: { slug: metadata.slug },
   }));
 }
 
