@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
-import { getPostSlugs } from '../../posts/getPostSlugs';
+import { getPostSlugs } from '../../src/posts/getPostSlugs';
 
 function PostsIndexPage({ postSlugs }: { postSlugs: string[] }) {
   return (

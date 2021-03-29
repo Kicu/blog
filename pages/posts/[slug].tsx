@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { getPost } from '../../posts/getPost';
-import { getPostSlugs } from '../../posts/getPostSlugs';
+import { getPost } from '../../src/posts/getPost';
+import { getPostSlugs } from '../../src/posts/getPostSlugs';
 
 function PostPage({
   postContent,

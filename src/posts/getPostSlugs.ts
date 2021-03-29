@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { promisify } from 'util';
-import { postsBasePath } from './consts';
+import { postsBasePath } from '../consts';
 
 const readDir = promisify(fs.readdir);
 
