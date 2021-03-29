@@ -13,7 +13,7 @@
     --color-5: #FB8500;
     --color-dark: #444444;
     --color-white: #ffffff;
-  }
+}
 
 /* General & theme */
 
@@ -24,7 +24,7 @@ html {
 
 body {
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     max-width: 40em;
     color: var(--color-dark);
     line-height: 1.5;
@@ -45,6 +45,21 @@ a {
 }
 a:visited {
     color: var(--color-primary);
+}
+
+.header h1 {
+    margin: .5em 0 var(--space-l) 0;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.header h1 a {
+    color: var(--color-primary);
+}
+
+.footer {
+    margin-top: calc(var(--space-l) * 2);
+    border-top: 1px solid #e7e7e7;
 }
 
 /* Page specific */
@@ -98,7 +113,7 @@ a:visited {
 .post blockquote > p > em:last-child {
     display: block;
     /* negative margin trick to cover border to make it vertically shorter */
-    margin-left: calc(-1 * (var(--space-m) + 4px)); 
+    margin-left: calc(-1 * (var(--space-m) + 4px));
     border-left: 4px solid var(--color-white);
     text-align: end;
 }
