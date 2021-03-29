@@ -1,6 +1,6 @@
 /* Super awesome: https://jgthms.com/web-design-in-4-minutes */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
 :root {
     --space-m: 1rem;
@@ -50,6 +50,8 @@ a:visited {
 .header h1 {
     margin: .5em 0 var(--space-l) 0;
     font-size: 1.8em;
+    font-weight: 900;
+    letter-spacing: 2px;
     cursor: pointer;
 }
 
