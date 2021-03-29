@@ -1,5 +1,3 @@
 const postsBasePath = 'db';
 
-export {
-    postsBasePath
-}
+export { postsBasePath };

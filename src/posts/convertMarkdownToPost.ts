@@ -14,7 +14,7 @@ async function convertMarkdownToPost(markdown: string): Promise<Post> {
     metadata: {
       title,
       id,
-      createdDate
+      createdDate,
     },
   };
 }
