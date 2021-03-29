@@ -9,5 +9,5 @@ Playing with next.js
  - [ ] move posts under src/posts
  - [ ] extract `db` to separate dir and gitignore it
  - [ ] add some tests!
- - [ ] refactor serving postat and extracting metadata
+ - [ ] refactor serving posts and extracting metadata
  
