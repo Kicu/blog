@@ -2,12 +2,16 @@ import { getAllPostNames, getRawPost } from './postsRepository';
 import { convertMarkdownToMetadata } from './convertMarkdownToMetadata';
 
 /**
- * Returns a list of all posts slugs.
- * Slug is the same as filename but without the file extension.
+ * Returns a list of all posts metadata
+ * May filter out posts marked as "private"
  *
  * @return {Promise<string[]>}
  */
-async function getPostList(): Promise<PostMetadata[]> {
+async function getPostList({
+  filterPrivate,
+}: {
+  filterPrivate: boolean;
+}): Promise<PostMetadata[]> {
   const names = await getAllPostNames();
 
   const rawPosts = await Promise.all(
@@ -18,7 +22,12 @@ async function getPostList(): Promise<PostMetadata[]> {
     rawPosts.map((rawPost) => convertMarkdownToMetadata(rawPost))
   );
 
-  return sortMetadataByDateDesc(postsMetadata);
+  const sorted = sortMetadataByDateDesc(postsMetadata);
+
+  if (filterPrivate) {
+    return sorted.filter((metadata) => !metadata.isPrivate);
+  }
+  return sorted;
 }
 
 /**
@@ -31,7 +40,7 @@ function sortMetadataByDateDesc(items: PostMetadata[]) {
     const dateA = new Date(a.createdDate);
     const dateB = new Date(b.createdDate);
 
-    console.log(dateA, dateB)
+    console.log(dateA, dateB);
 
     if (dateA < dateB) {
       return 1;

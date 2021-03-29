@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getPostList();
+  const posts = await getPostList({ filterPrivate: true });
   const paths = formatPaths(posts);
 
   return {
