@@ -40,8 +40,6 @@ function sortMetadataByDateDesc(items: PostMetadata[]) {
     const dateA = new Date(a.createdDate);
     const dateB = new Date(b.createdDate);
 
-    console.log(dateA, dateB);
-
     if (dateA < dateB) {
       return 1;
     } else if (dateA > dateB) {
