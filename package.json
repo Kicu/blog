@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev -p 4000",
     "build": "next build",
-    "build-static": "next build && next export",
+    "build-static": "next build && next export -o docs",
     "start": "next start"
   },
   "author": "",

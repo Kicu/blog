@@ -1,4 +1,6 @@
 module.exports = {
+  basePath: '/blog',
+  assetPrefix: '/blog',
   async redirects() {
     return [
       {
