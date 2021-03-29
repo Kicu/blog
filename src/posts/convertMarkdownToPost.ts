@@ -9,7 +9,9 @@ import { extractPostMetadata } from './extractPostMetadata';
 async function convertMarkdownToPost(markdown: string): Promise<Post> {
   const vFile = await parseMarkdownWithFrontmatter(markdown);
 
-  const { title, id, slug, createdDate } = extractPostMetadata(vFile.data);
+  const { title, id, slug, createdDate, isPrivate } = extractPostMetadata(
+    vFile.data
+  );
 
   return {
     content: vFile.toString(),
@@ -18,6 +20,7 @@ async function convertMarkdownToPost(markdown: string): Promise<Post> {
       id,
       slug,
       createdDate,
+      isPrivate,
     },
   };
 }
