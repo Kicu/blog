@@ -6,7 +6,6 @@ import { getPostSlugs } from '../../posts/getPostSlugs';
 function PostsIndexPage({ postSlugs }: { postSlugs: string[] }) {
   return (
     <main>
-      <h1>Posts</h1>
       <ul className="postsList">
         {postSlugs.map((slug) => {
           const postUrl = `/posts/${slug}`;
