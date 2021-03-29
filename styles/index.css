@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
 :root {
+    --space-s: .5rem;
     --space-m: 1rem;
     --space-l: 2rem;
 
@@ -13,6 +14,10 @@
     --color-5: #FB8500;
     --color-dark: #444444;
     --color-white: #ffffff;
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 700;
+    --font-weight-bold: 900;
 }
 
 /* General & theme */
@@ -31,8 +36,8 @@ body {
 }
 
 h2 {
-    margin-top: 1em;
-    padding-top: 1em;
+    margin-top: var(--space-m);
+    padding-top: var(--space-m);
 }
 
 h1,
@@ -47,10 +52,12 @@ a:visited {
     color: var(--color-primary);
 }
 
+/* Header & Footer */
+
 .header h1 {
-    margin: .5em 0 var(--space-l) 0;
+    margin: var(--space-s) 0 var(--space-l) 0;
     font-size: 1.8em;
-    font-weight: 900;
+    font-weight: var(--font-weight-bold);
     letter-spacing: 2px;
     cursor: pointer;
 }
@@ -64,7 +71,7 @@ a:visited {
     border-top: 1px solid #e7e7e7;
 }
 
-/* Page specific */
+/* Posts page */
 
 .postsList {
     margin: 0 auto;
@@ -73,15 +80,30 @@ a:visited {
 }
 
 .postsList .postsList__item {
-    margin-bottom: var(--space-l);
-    font-size: 1.5rem;
-    text-transform: capitalize;
-    
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
-.postsList .postsList__item a {
+.postsList .postsList__item .postsList__itemLink {
+    margin-bottom: var(--space-s);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: capitalize;
     text-decoration: none;
 }
+
+.postsList .postsList__item .postsList__itemLink:hover {
+    color: var(--color-secondary);
+}
+
+.postsList .postsList__item .postsList__itemDate {
+    padding-left: var(--space-s);
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* Single Post page */
 
 .post code,
 .post pre {

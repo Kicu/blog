@@ -3,17 +3,22 @@ import Link from 'next/link';
 
 import { getPostList } from '../../src/posts/getPostList';
 
-function PostsIndexPage({ postSlugs }: { postSlugs: string[] }) {
+type SimplePostData = { title: string; slug: string; date: string };
+
+function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
   return (
     <main>
       <ul className="postsList">
-        {postSlugs.map((slug) => {
-          const postUrl = `/posts/${slug}`;
+        {posts.map((post) => {
+          const postUrl = `/posts/${post.slug}`;
           return (
-            <li key={slug} className="postsList__item">
+            <li key={post.slug} className="postsList__item">
               <Link href={postUrl}>
-                <a>{slug}</a>
+                <a className="postsList__itemLink">{post.title}</a>
               </Link>
+              <div>
+                🗓️<span className="postsList__itemDate">{post.date}</span>
+              </div>
             </li>
           );
         })}
@@ -24,11 +29,15 @@ function PostsIndexPage({ postSlugs }: { postSlugs: string[] }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPostList();
-  const postSlugs = posts.map(metadata => metadata.slug);
+  const formattedPosts = posts.map((postMetadata) => ({
+    title: postMetadata.title,
+    slug: postMetadata.slug,
+    date: postMetadata.createdDate,
+  }));
 
   return {
     props: {
-      postSlugs,
+      posts: formattedPosts,
     },
   };
 };
