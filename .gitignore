@@ -11,3 +11,5 @@ node_modules
 
 # sources for articles
 db/
+
+.DS_Store
