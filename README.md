@@ -13,6 +13,7 @@ Available at: https://kicu.github.io/blog/posts
  - [**React**](https://github.com/facebook/react) 16
  - [**remarkjs**](https://github.com/remarkjs/remark) (with plugins) for parsing md files 
  - **eslint** + **prettier** custom setup
+ - styled with pure vanilla CSS (so awesome!)
 
 
 ## How this works
@@ -49,4 +50,7 @@ I have setup GitHub Pages to be served from branch `static-build` from directory
  - add stylelint
  - improve TS typings (enable strict mode?)
  - automatic deployment
- 
+
+
+## Useful links and sources
+- Configuring nextjs static export for github pages: [https://wallis.dev/blog/next-js-basepath-and-assetprefix](https://wallis.dev/blog/next-js-basepath-and-assetprefix)
