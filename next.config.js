@@ -1,6 +1,8 @@
+const isDev = process.env.NODE_ENV === 'development';
+
 module.exports = {
-  basePath: '/blog',
-  assetPrefix: '/blog',
+  basePath: isDev ? '' : '/blog', // for GH pages
+  assetPrefix: isDev ? '' : '/blog', // for GH pages
   async redirects() {
     return [
       {
