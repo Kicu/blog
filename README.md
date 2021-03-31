@@ -35,7 +35,7 @@ There are 3 pages
 Posts are kept in `/db` directory which is gitignored. This is because I don't want to publish all the sources of my posts to version control, as it is not needed for the site to work.  
 In addition I plan to have some private posts which I would like to not be available on web.  
 The obvious downside to this setup is that the build can only work on my local machine where there are posts - CI builds would not work.  
-My mind model is that this `/db` directory can be treated like a database
+My mind model is that this `/db` directory should be treated more like a database and not like other source files.
 
 For `/posts` page:
  - read the whole "db" directory to get a list of posts
@@ -53,7 +53,7 @@ Since posts come from "db" and are transformed on the server side only there sho
 
 ### Posts format 📄
 The posts are simple markdown files. 1 post == 1 `*.md` file.  
-In future I could consider also supporting `mdx` format
+In future I could consider also supporting `mdx` format.
 
 #### Front Matter
 I learned about Front Matter from [docusaurus](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-frontmatter).  
@@ -66,6 +66,8 @@ foo: bar
 ```
 
 In this project it is used to keep post metadata like: `title`, `html slug` of the post etc.
+
+As an example the "hello-world" post is commited to repository.
 
 #### Private posts
 As mentioned earlier I want to be able to write some posts which will be "private". I don't want them to be accessible on the web by anyone - neither inside version control, nextjs build artifacts and of course on the actual blog.

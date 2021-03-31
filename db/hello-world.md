@@ -11,7 +11,7 @@ _The very first post._
 I have created this blog mostly as an experiment in coding, and I feel quite happy with how this turned out.  
 I was able to learn some new libraries, try out **TypeScript** on my own (without other people in the project doing the harder stuff) and touch every part of the process: the idea, the (simple) design, code, and finally deployment.
 
-That being said, since this is a blog, I wanted to share some of my thoughts related to the process of creating this.
+That being said, since this is a blog, I wanted to share some of my thoughts related to the process of creating it.
 
 ---
 
@@ -30,7 +30,7 @@ I wanted something that groups all this together.
   - _things in my head_
   - _stuff in my head_
 
-These seemed either too simple (_thoughts_) or too silly sounding (_stuff_). So I settled for a simple "_worlds in my head_".
+These seemed either too simple _(thoughts)_ or too silly sounding _(stuff)_. So I settled for a simple "_worlds in my head_".
 
 It's quite possible that I will change this in future.
 
