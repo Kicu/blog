@@ -42,13 +42,17 @@ export const getStaticProps: GetStaticProps = async ({
   };
 };
 
+/**
+ * This tells next which paths I expect to render.
+ * Required to use static generation.
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPostList({ filterPrivate: true });
   const paths = formatPaths(posts);
 
   return {
     paths,
-    fallback: false,
+    fallback: false, // 'false' is required for `next export` to work
   };
 };
 

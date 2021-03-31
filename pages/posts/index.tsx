@@ -29,6 +29,7 @@ function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPostList({filterPrivate: true});
+
   const formattedPosts = posts.map((postMetadata) => ({
     title: postMetadata.title,
     slug: postMetadata.slug,
