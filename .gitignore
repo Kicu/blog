@@ -10,6 +10,7 @@ node_modules
 .idea
 
 # sources for articles
-db/
+db/*
+!db/hello-world.md
 
 .DS_Store
