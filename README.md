@@ -1,7 +1,7 @@
 # Blog
 
 My personal blog powered by `nextjs` + `TypeScript` with articles stored as `*.md` files.  
-This was created mostly for learning purposes and maybe in future for some thought-sharing process as well.
+This was created mainly for learning purposes and maybe for some thought-sharing process in future as well.
 
 Deployed to GitHub Pages.
 
@@ -66,6 +66,13 @@ foo: bar
 ```
 
 In this project it is used to keep post metadata like: `title`, `html slug` of the post etc.
+
+#### Private posts
+As mentioned earlier I want to be able to write some posts which will be "private". I don't want them to be accessible on the web by anyone - neither inside version control, nextjs build artifacts and of course on the actual blog.
+
+To achieve this there is a property `isPrivate` inside post metadata and articles that have this set to `true` will be filtered out, and next will not rendered these pages.
+
+_Todo this is currently hardcoded, make this conditional based on env vars_
 
 
 ### Deployment
