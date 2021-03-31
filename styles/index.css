@@ -68,6 +68,7 @@ a {
 .footer {
     margin-top: calc(var(--space-l) * 2);
     border-top: 1px solid var(--color-lightgrey);
+    font-weight: var(--font-weight-medium);
 }
 
 /* Posts page */
@@ -119,12 +120,20 @@ a {
     padding: 1rem;
 }
 
-.post header .createdDate {
-    font-size: 0.875rem;
+.post header {
+    margin-bottom: var(--space-l);
 }
 
-.post header h1 {
+.post header .postTitle {
+    margin-bottom: var(--space-s);
     font-size: 2rem;
+}
+
+.post header .createdDate {
+    margin-top: calc(-1 * var(--space-s));
+    color: var(--color-grey);
+    font-style: italic;
+    font-size: 0.875rem;
 }
 
 .post h2 {
