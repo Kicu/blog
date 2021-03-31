@@ -39,7 +39,6 @@ body {
 
 h2 {
     margin-top: var(--space-m);
-    padding-top: var(--space-m);
 }
 
 h1,
@@ -49,9 +48,6 @@ h2 {
 
 a {
     color: var(--color-secondary);
-}
-a:visited {
-    color: var(--color-primary);
 }
 
 /* Header & Footer */
@@ -65,7 +61,8 @@ a:visited {
 }
 
 .header h1 a {
-    color: var(--color-primary);
+    color: var(--color-tertiary);
+    font-size: 2rem;
 }
 
 .footer {
@@ -91,6 +88,7 @@ a:visited {
     margin-bottom: var(--space-s);
     font-size: 1.5rem;
     font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
     text-decoration: none;
 }
 
@@ -123,6 +121,21 @@ a:visited {
 
 .post header .createdDate {
     font-size: 0.875rem;
+}
+
+.post header h1 {
+    font-size: 2rem;
+}
+
+.post h2 {
+    margin-top: calc(var(--space-m) + var(--space-s));
+}
+
+.post hr {
+    margin: var(--space-l);
+    height: 1px;
+    border: 0;
+    background-color: var(--color-lightgrey);
 }
 
 /* custom quoting styling allowing for nice quote author */
