@@ -1,8 +1,8 @@
-const isDev = process.env.NODE_ENV === 'development';
+const config = require('config');
 
 module.exports = {
-  basePath: isDev ? '' : '/blog', // for GH pages
-  assetPrefix: isDev ? '' : '/blog', // for GH pages
+  basePath: config.get('webBasePath'),
+  assetPrefix: config.get('webBasePath'),
   async redirects() {
     return [
       {
