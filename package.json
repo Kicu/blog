@@ -10,7 +10,7 @@
     "start": "next start"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "config": "^3.3.6",
     "next": "^9.5.2",
