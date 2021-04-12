@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
 import { getPostList } from '../../src/posts/getPostList';
+import { formatDate } from '../../src/utils/formatDate';
 
 type SimplePostData = {
   title: string;
@@ -23,7 +24,10 @@ function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
               </Link>
               <p className="postsList__itemSubheading">{post.subhead}</p>
               <div>
-                🗓️<span className="postsList__itemDate">{post.date}</span>
+                🗓️
+                <span className="postsList__itemDate">
+                  {formatDate(post.date)}
+                </span>
               </div>
             </li>
           );
