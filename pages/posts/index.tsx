@@ -3,7 +3,12 @@ import Link from 'next/link';
 
 import { getPostList } from '../../src/posts/getPostList';
 
-type SimplePostData = { title: string; slug: string; date: string };
+type SimplePostData = {
+  title: string;
+  subhead: string;
+  slug: string;
+  date: string;
+};
 
 function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
   return (
@@ -16,6 +21,7 @@ function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
               <Link href={postUrl}>
                 <a className="postsList__itemLink">{post.title}</a>
               </Link>
+              <p className="postsList__itemSubheading">{post.subhead}</p>
               <div>
                 🗓️<span className="postsList__itemDate">{post.date}</span>
               </div>
@@ -32,6 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const formattedPosts = posts.map((postMetadata) => ({
     title: postMetadata.title,
+    subhead: postMetadata.subhead,
     slug: postMetadata.slug,
     date: postMetadata.createdDate,
   }));
