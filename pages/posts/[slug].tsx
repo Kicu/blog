@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { getPost } from '../../src/posts/getPost';
 import { getPostList } from '../../src/posts/getPostList';
+import { formatDate } from '../../src/utils/formatDate';
 
 function PostPage({
   postContent,
@@ -17,7 +18,7 @@ function PostPage({
       <article className="post">
         <header>
           <h1 className="postTitle">{title}</h1>
-          <p className="createdDate">{date}</p>
+          <p className="createdDate">{formatDate(date)}</p>
         </header>
         <div dangerouslySetInnerHTML={{ __html: postContent }} />
       </article>

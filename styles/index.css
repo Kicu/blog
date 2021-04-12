@@ -62,11 +62,11 @@ a {
 
 .header h1 a {
     color: var(--color-tertiary);
-    font-size: 2rem;
+    font-size: 2.25rem;
 }
 
 .footer {
-    margin-top: calc(var(--space-l) * 2);
+    margin-top: calc(var(--space-l) * 3);
     border-top: 1px solid var(--color-lightgrey);
     padding-top: var(--space-s);
     display: flex;
@@ -106,6 +106,7 @@ a {
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .postsList .postsList__item .postsList__itemLink {
@@ -118,6 +119,11 @@ a {
 
 .postsList .postsList__item .postsList__itemLink:hover {
     color: var(--color-secondary);
+}
+
+.postsList .postsList__item .postsList__itemSubheading {
+    margin: 0 0 var(--space-s);
+    font-style: italic;
 }
 
 .postsList .postsList__item .postsList__itemDate {

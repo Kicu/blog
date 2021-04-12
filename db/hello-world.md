@@ -1,5 +1,6 @@
 ---
 id: hello-world
+subhead: The very first post.
 slug: hello-world
 title: Hello world!
 createdDate: 2021-03-31
