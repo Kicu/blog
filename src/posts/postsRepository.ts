@@ -7,7 +7,7 @@ const readDir = promisify(fs.readdir);
 
 const mdExtensionRegex = /\.md/;
 
-async function getRawPost(fileName: string) {
+async function getRawPost(fileName: string): Promise<string> {
   const filePath = `${postsBasePath}/${fileName}.md`;
 
   try {
@@ -20,7 +20,7 @@ async function getRawPost(fileName: string) {
   }
 }
 
-async function getAllPostNames() {
+async function getAllPostNames(): Promise<string[]> {
   try {
     const files = await readDir(postsBasePath, 'utf8');
     const slugs = files.map((fileName) =>

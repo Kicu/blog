@@ -3,7 +3,7 @@ import Link from 'next/link';
 /**
  * Absolute img url is used to solve the problem with basePath difference between local build and GH pages
  */
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <footer className="footer">
       <div className="footer__footerLeft">

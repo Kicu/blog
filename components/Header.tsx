@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-function Header() {
+function Header(): JSX.Element {
   return (
     <header className="header">
       <Link href="/posts">

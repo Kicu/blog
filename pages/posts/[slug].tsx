@@ -12,7 +12,7 @@ function PostPage({
   postContent: string;
   title: string;
   date: string;
-}) {
+}): JSX.Element {
   return (
     <main>
       <article className="post">
