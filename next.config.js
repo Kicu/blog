@@ -12,4 +12,8 @@ module.exports = {
       },
     ];
   },
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    showPrivatePosts: process.env.SHOW_PRIVATE_POSTS === 'true',
+  },
 };

@@ -1,8 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import getConfig from 'next/config';
 
 import { getPost } from '../../src/posts/getPost';
 import { getPostList } from '../../src/posts/getPostList';
 import { formatDate } from '../../src/utils/formatDate';
+
+const { publicRuntimeConfig } = getConfig();
 
 function PostPage({
   postContent,
@@ -48,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ({
  * Required to use static generation.
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getPostList({ filterPrivate: true });
+  const posts = await getPostList();
   const paths = formatPaths(posts);
 
   return {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev -p 4000",
+    "dev": "SHOW_PRIVATE_POSTS=false next dev -p 4000",
     "build": "next build",
     "build-gh-pages": "next build && next export -o docs && touch ./docs/.nojekyll",
     "start": "next start",

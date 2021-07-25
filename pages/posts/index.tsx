@@ -38,7 +38,7 @@ function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getPostList({ filterPrivate: true });
+  const posts = await getPostList();
 
   const formattedPosts = posts.map((postMetadata) => ({
     title: postMetadata.title,

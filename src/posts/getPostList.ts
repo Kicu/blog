@@ -1,5 +1,9 @@
+import getConfig from 'next/config';
+
 import { getAllPostNames, getRawPost } from './postsRepository';
 import { convertMarkdownToMetadata } from './convertMarkdownToMetadata';
+
+const { publicRuntimeConfig } = getConfig();
 
 /**
  * Returns a list of all posts metadata
@@ -7,11 +11,7 @@ import { convertMarkdownToMetadata } from './convertMarkdownToMetadata';
  *
  * @return {Promise<string[]>}
  */
-async function getPostList({
-  filterPrivate,
-}: {
-  filterPrivate: boolean;
-}): Promise<PostMetadata[]> {
+async function getPostList(): Promise<PostMetadata[]> {
   const names = await getAllPostNames();
 
   const rawPosts = await Promise.all(
@@ -24,10 +24,11 @@ async function getPostList({
 
   const sorted = sortMetadataByDateDesc(postsMetadata);
 
-  if (filterPrivate) {
-    return sorted.filter((metadata) => !metadata.isPrivate);
+  if (publicRuntimeConfig.showPrivatePosts) {
+    return sorted;
   }
-  return sorted;
+
+  return sorted.filter((metadata) => !metadata.isPrivate);
 }
 
 /**
