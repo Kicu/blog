@@ -72,9 +72,8 @@ As an example the "hello-world" post is commited to repository.
 #### Private posts
 As mentioned earlier I want to be able to write some posts which will be "private". I don't want them to be accessible on the web by anyone - neither inside version control, nextjs build artifacts and of course on the actual blog.
 
-To achieve this there is a property `isPrivate` inside post metadata and articles that have this set to `true` will be filtered out, and next will not rendered these pages.
-
-_Todo this is currently hardcoded, make this conditional based on env vars_
+To achieve this there is a property `isPrivate` inside post metadata and articles that have this set to `true` will be filtered out, and next will not be rendering these pages.
+This is controlled via specific env var which is injected into next/config.
 
 
 ### Deployment
