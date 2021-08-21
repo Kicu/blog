@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
 
 /* eslint-disable no-unused-vars */
 import '../styles/index.css';

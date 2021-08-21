@@ -1,36 +1,14 @@
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
-
 import { getPostList } from '../../src/posts/getPostList';
-import { formatDate } from '../../src/utils/formatDate';
-
-type SimplePostData = {
-  title: string;
-  subhead: string;
-  slug: string;
-  date: string;
-};
+import { PostListItem } from '../../src/components/PostListItem';
+import { SimplePostData } from '../../src/types';
 
 function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
   return (
     <main>
       <ul className="postsList">
         {posts.map((post) => {
-          const postUrl = `/posts/${post.slug}`;
-          return (
-            <li key={post.slug} className="postsList__item">
-              <Link href={postUrl}>
-                <a className="postsList__itemLink">{post.title}</a>
-              </Link>
-              <p className="postsList__itemSubheading">{post.subhead}</p>
-              <div>
-                🗓️
-                <span className="postsList__itemDate">
-                  {formatDate(post.date)}
-                </span>
-              </div>
-            </li>
-          );
+          return <PostListItem post={post} />;
         })}
       </ul>
     </main>
