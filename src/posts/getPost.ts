@@ -1,5 +1,6 @@
 import { getRawPost } from './postsRepository';
 import { convertMarkdownToPost } from './convertMarkdownToPost';
+import { Post } from '../types';
 
 /**
  * Returns full Post by slugname, includes:

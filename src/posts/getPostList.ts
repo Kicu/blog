@@ -2,6 +2,7 @@ import getConfig from 'next/config';
 
 import { getAllPostNames, getRawPost } from './postsRepository';
 import { convertMarkdownToMetadata } from './convertMarkdownToMetadata';
+import { PostMetadata } from '../types';
 
 const { publicRuntimeConfig } = getConfig();
 

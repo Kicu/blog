@@ -5,6 +5,7 @@ import extract from 'remark-extract-frontmatter';
 import YAML from 'yaml';
 
 import { extractPostMetadata } from './extractPostMetadata';
+import { Post } from '../types';
 
 async function convertMarkdownToPost(markdown: string): Promise<Post> {
   const vFile = await parseMarkdownWithFrontmatter(markdown);
@@ -15,6 +16,7 @@ async function convertMarkdownToPost(markdown: string): Promise<Post> {
     id,
     slug,
     createdDate,
+    lang,
     isPrivate,
   } = extractPostMetadata(vFile.data);
 
@@ -26,6 +28,7 @@ async function convertMarkdownToPost(markdown: string): Promise<Post> {
       id,
       slug,
       createdDate,
+      lang,
       isPrivate,
     },
   };

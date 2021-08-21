@@ -1,11 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import getConfig from 'next/config';
 
 import { getPost } from '../../src/posts/getPost';
 import { getPostList } from '../../src/posts/getPostList';
 import { formatDate } from '../../src/utils/formatDate';
-
-const { publicRuntimeConfig } = getConfig();
+import { PostPageParams, PostMetadata } from '../../src/types';
 
 function PostPage({
   postContent,

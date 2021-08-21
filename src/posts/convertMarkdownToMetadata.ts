@@ -4,6 +4,7 @@ import extract from 'remark-extract-frontmatter';
 import YAML from 'yaml';
 
 import { extractPostMetadata } from './extractPostMetadata';
+import { PostMetadata } from '../types';
 
 async function convertMarkdownToMetadata(
   markdown: string
