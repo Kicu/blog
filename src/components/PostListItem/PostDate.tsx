@@ -1,4 +1,4 @@
-import { formatDate } from '../../src/utils/formatDate';
+import { formatDate } from '../../utils/formatDate';
 
 export function PostDate({ date }: { date: string }) {
   return (

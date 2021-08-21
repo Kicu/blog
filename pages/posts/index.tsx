@@ -1,14 +1,7 @@
 import { GetStaticProps } from 'next';
-
 import { getPostList } from '../../src/posts/getPostList';
-import { PostListItem } from '../../components/PostListItem';
-
-export type SimplePostData = {
-  title: string;
-  subhead: string;
-  slug: string;
-  date: string;
-};
+import { PostListItem } from '../../src/components/PostListItem';
+import { SimplePostData } from '../../src/types';
 
 function PostsIndexPage({ posts }: { posts: SimplePostData[] }) {
   return (

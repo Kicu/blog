@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { PostDate } from './PostListItem/PostDate';
-import { SimplePostData } from '../pages/posts/index';
+import { SimplePostData } from '../types';
 
 export function PostListItem({ post }: { post: SimplePostData }) {
   const postUrl = `/posts/${post.slug}`;
