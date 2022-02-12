@@ -18,8 +18,8 @@ function PostPage({
     <main>
       <article className="post">
         <header>
-          <h1 className="postTitle">{title}</h1>
           <p className="createdDate">{formatDate(date)}</p>
+          <h1 className="postTitle">{title}</h1>
         </header>
         <div dangerouslySetInnerHTML={{ __html: postContent }} />
       </article>

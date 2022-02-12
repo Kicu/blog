@@ -1,6 +1,6 @@
 import { formatDate } from '../../utils/formatDate';
 
-export function PostDate({ date }: { date: string }) {
+export function PostDate({ date }: { date: string }): JSX.Element {
   return (
     <div>
       🗓️

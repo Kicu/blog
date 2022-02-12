@@ -6,12 +6,12 @@ function renderTitle(title: string, lang: PostLangs) {
   return (
     <>
       <span>{title}</span>
-      {lang === PostLangs.pl && <span> 🇵🇱</span>}
+      {lang === PostLangs.pl && <span className="postsList__itemIcon">🇵🇱</span>}
     </>
   );
 }
 
-export function PostListItem({ post }: { post: SimplePostData }) {
+export function PostListItem({ post }: { post: SimplePostData }): JSX.Element {
   const postUrl = `/posts/${post.slug}`;
 
   return (

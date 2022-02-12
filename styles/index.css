@@ -20,6 +20,8 @@
     --font-weight-normal: 400;
     --font-weight-medium: 700;
     --font-weight-bold: 900;
+
+    --font-size-md: 1rem;
 }
 
 /* General & theme */
@@ -126,6 +128,11 @@ a {
     font-style: italic;
 }
 
+.postsList .postsList__item .postsList__itemLink .postsList__itemIcon {
+    padding-left: var(--space-s);
+    font-size: var(--font-size-md);
+}
+
 .postsList .postsList__item .postsList__itemDate {
     padding-left: var(--space-s);
     color: var(--color-grey);
@@ -154,12 +161,12 @@ a {
 }
 
 .post header .postTitle {
-    margin-bottom: var(--space-s);
+    margin: var(--space-m) 0 var(--space-s);
     font-size: 2rem;
 }
 
 .post header .createdDate {
-    margin-top: calc(-1 * var(--space-s));
+    margin: var(--space-s) 0 0;
     color: var(--color-grey);
     font-style: italic;
     font-size: 0.875rem;
