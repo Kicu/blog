@@ -34,7 +34,7 @@ html {
 body {
     margin: 0 auto;
     padding: 1.5rem 1rem;
-    max-width: 40em;
+    max-width: 36em;
     color: var(--color-dark);
     line-height: 1.5;
 }
@@ -64,7 +64,7 @@ a {
 
 .header h1 a {
     color: var(--color-tertiary);
-    font-size: 2.25rem;
+    font-size: 3rem;
 }
 
 .footer {
@@ -113,7 +113,7 @@ a {
 
 .postsList .postsList__item .postsList__itemLink {
     margin-bottom: var(--space-s);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: var(--font-weight-medium);
     color: var(--color-primary);
     text-decoration: none;
@@ -162,7 +162,7 @@ a {
 
 .post header .postTitle {
     margin: var(--space-m) 0 var(--space-s);
-    font-size: 2rem;
+    font-size: 2.25rem;
 }
 
 .post header .createdDate {
