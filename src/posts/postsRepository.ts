@@ -5,7 +5,7 @@ import { postsBasePath } from '../consts';
 const readFile = promisify(fs.readFile);
 const readDir = promisify(fs.readdir);
 
-const mdExtensionRegex = /\.md/;
+const mdExtensionRegex = /\.md$/;
 
 async function getRawPost(fileName: string): Promise<string> {
   const filePath = `${postsBasePath}/${fileName}.md`;
@@ -16,7 +16,7 @@ async function getRawPost(fileName: string): Promise<string> {
     return fileData;
   } catch (err) {
     console.error(err);
-    return null;
+    return '';
   }
 }
 

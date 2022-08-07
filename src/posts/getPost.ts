@@ -14,7 +14,7 @@ async function getPost(slug: string): Promise<Post> {
     return convertMarkdownToPost(rawPost);
   } catch (err) {
     console.error(err);
-    return null;
+    throw err;
   }
 }
 

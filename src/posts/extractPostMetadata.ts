@@ -1,23 +1,27 @@
-import { PostMetadata } from '../types';
+import { PostMetadata, REQUIRED_POST_METADATA_PROPS } from '../types';
 
-function extractPostMetadata(data: any): PostMetadata {
-  const title = 'title' in data ? data.title : '';
-  const subhead =
-    'subhead' in data ? data.subhead : 'Some generic subtitle here...';
-  const id = 'id' in data ? data.id : '';
-  const slug = 'slug' in data ? data.slug : '';
-  const createdDate = 'createdDate' in data ? data.createdDate : '2020-02-20'; // Todo add sensible default
-  const lang = 'lang' in data ? data.lang : 'en';
-  const isPrivate = 'isPrivate' in data ? data.isPrivate : true;
+const isPostMetadata = (data: unknown): data is PostMetadata =>
+  Boolean(
+    data &&
+      typeof data === 'object' &&
+      REQUIRED_POST_METADATA_PROPS.every((propName) => propName in data)
+  );
+
+function extractPostMetadata(data: unknown): PostMetadata {
+  if (!isPostMetadata(data)) {
+    throw new Error('missing metadata');
+  }
+
+  const { title, id, slug, subhead, createdDate, lang, isPublic } = data;
 
   return {
     title,
-    subhead,
     id,
     slug,
+    subhead,
     createdDate,
     lang,
-    isPrivate,
+    isPublic,
   };
 }
 

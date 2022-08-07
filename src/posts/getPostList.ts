@@ -8,19 +8,17 @@ const { publicRuntimeConfig } = getConfig();
 
 /**
  * Returns a list of all posts metadata
- * May filter out posts marked as "private"
+ * May filter out posts marked that are not marked as public
  *
  * @return {Promise<string[]>}
  */
 async function getPostList(): Promise<PostMetadata[]> {
   const names = await getAllPostNames();
 
-  const rawPosts = await Promise.all(
-    names.map((postName) => getRawPost(postName))
-  );
+  const rawPosts = await Promise.all(names.map(getRawPost));
 
   const postsMetadata = await Promise.all(
-    rawPosts.map((rawPost) => convertMarkdownToMetadata(rawPost))
+    rawPosts.map(convertMarkdownToMetadata)
   );
 
   const sorted = sortMetadataByDateDesc(postsMetadata);
@@ -29,7 +27,7 @@ async function getPostList(): Promise<PostMetadata[]> {
     return sorted;
   }
 
-  return sorted.filter((metadata) => !metadata.isPrivate);
+  return sorted.filter((metadata) => metadata.isPublic);
 }
 
 /**

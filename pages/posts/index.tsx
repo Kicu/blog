@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const formattedPosts = posts.map((postMetadata) => ({
     title: postMetadata.title,
-    subhead: postMetadata.subhead,
+    subhead: postMetadata.subhead || '',
     slug: postMetadata.slug,
     date: postMetadata.createdDate,
     lang: postMetadata.lang,

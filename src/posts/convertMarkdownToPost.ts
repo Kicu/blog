@@ -17,7 +17,7 @@ async function convertMarkdownToPost(markdown: string): Promise<Post> {
     slug,
     createdDate,
     lang,
-    isPrivate,
+    isPublic,
   } = extractPostMetadata(vFile.data);
 
   return {
@@ -29,7 +29,7 @@ async function convertMarkdownToPost(markdown: string): Promise<Post> {
       slug,
       createdDate,
       lang,
-      isPrivate,
+      isPublic,
     },
   };
 }

@@ -5,7 +5,7 @@ slug: hello-world
 title: Hello world!
 createdDate: 2021-03-31
 lang: en
-isPrivate: false
+isPublic: true
 ---
 
 _The very first post._

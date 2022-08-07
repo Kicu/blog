@@ -1,3 +1,9 @@
+type RequiredKeys<Type> = NonNullable<
+  { [key in keyof Type]: undefined extends Type[key] ? never : key }[keyof Type]
+>;
+
+// type OptionalKeys<Type> = Exclude<keyof Type, RequiredKeys<Type>>;
+
 export type PostPageParams = { slug: string };
 
 export enum PostLangs {
@@ -5,15 +11,22 @@ export enum PostLangs {
   pl = 'pl',
 }
 
-export type PostMetadata = {
+export interface PostMetadata {
   title: string;
-  subhead: string;
   id: string;
   slug: string;
   createdDate: string;
-  lang: PostLangs;
-  isPrivate: boolean;
-};
+  isPublic?: boolean;
+  subhead?: string;
+  lang?: PostLangs;
+}
+
+export const REQUIRED_POST_METADATA_PROPS: RequiredKeys<PostMetadata>[] = [
+  'title',
+  'id',
+  'slug',
+  'createdDate',
+];
 
 export interface Post {
   content: string;
