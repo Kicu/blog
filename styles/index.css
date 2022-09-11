@@ -161,7 +161,7 @@ a {
 }
 
 .post header .postTitle {
-  margin: var(--space-m) 0 var(--space-s);
+  margin: var(--space-m) 0 var(--space-s) -2px;
   font-size: 2.25rem;
 }
 
