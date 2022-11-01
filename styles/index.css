@@ -55,7 +55,7 @@ a {
 /* Header & Footer */
 
 .header h1 {
-  margin: var(--space-s) 0 var(--space-l) 0;
+  margin: var(--space-s) 0 var(--space-l) -6px;
   font-size: 1.8em;
   font-weight: var(--font-weight-bold);
   letter-spacing: 2px;

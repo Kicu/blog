@@ -9,7 +9,7 @@ const isPostMetadata = (data: unknown): data is PostMetadata =>
 
 function extractPostMetadata(data: unknown): PostMetadata {
   if (!isPostMetadata(data)) {
-    throw new Error('missing metadata');
+    throw new Error('No metadata found or missing some props');
   }
 
   const { title, id, slug, subhead, createdDate, lang, isPublic } = data;
