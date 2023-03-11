@@ -34,7 +34,7 @@ html {
 body {
   margin: 0 auto;
   padding: 1.5rem 1rem;
-  max-width: 36em;
+  max-width: 38em;
   color: var(--color-dark);
   line-height: 1.5;
 }
@@ -183,6 +183,10 @@ a {
   background-color: var(--color-lightgrey);
 }
 
+.post ul li {
+  margin-bottom: 0.5em;
+}
+
 /* custom quoting styling allowing for nice quote author */
 .post blockquote {
   margin-left: 0;
@@ -196,8 +200,10 @@ a {
 
 .post blockquote > p > em:last-child {
   display: block;
+  font-size: 0.8em;
   /* negative margin trick to cover border to make it vertically shorter */
   margin-left: calc(-1 * (var(--space-m) + 4px));
+  margin-top: 0.5em;
   border-left: 4px solid var(--color-white);
   text-align: end;
 }
