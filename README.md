@@ -15,6 +15,9 @@ Available at: https://kicu.github.io/blog/posts
  - **eslint** + **prettier** custom setup
  - styled with pure vanilla CSS (yes!)
 
+### Todos
+ - Fix `ERR_OSSL_EVP_UNSUPPORTED` error
+
 
 ## About the project
 This is my first (non-trivial) project using nextjs + TypeScript.  
